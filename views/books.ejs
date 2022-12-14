@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books List</title>
+    <link rel="stylesheet" href="/css/nav-bar.css" />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <ul>
+      <ul>
+        <li class="active" style="background-color: #f8c5c5">
+          <a href="./">Home</a>
+        </li>
+        <li><a href="./books"> Book List</a></li>
+        <li><a href="./search_books">Search Book List</a></li>
+        <li><a href="./admin">Admin</a></li>
+        <li><a href="./insert">Add New Book</a></li>
+      </ul>
+    </ul>
+    <style>
+      body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Statsbiblioteket_l%C3%A6sesalen-2.jpg/1280px-Statsbiblioteket_l%C3%A6sesalen-2.jpg');
+      }
+      </style> 
+    <div style="margin-left: 25%; padding: 1px 16px; height: 100%">
+      <h1 style="text-align: center"><b style="color:rgb(248, 244, 244);">Book List </b></h1>
+      <table class="table table-striped" style="width: 100%">
+        <% characters.forEach(function(character) { %>
+          
+        
+        <tr>
+          <td>
+            <div class="card" style="width: 18rem; margin: 10px">
+              <a
+                href="./book/?id=<%= character._id %>"
+                style="
+                  text-decoration: none;
+                  color: rgb(247, 242, 242);
+                  text-align: center;
+                  justify-content: center;
+                  align-items: center;
+                "
+                ><img src="images/<%= character.image %>" width="200" height="200"
+              /></a>
+            </div>
+          </td>
+          <td><%= character.name %><br/>
+            <%= character.author_name %>
+            
+          </td>
+        </tr>
+        <%  }); %>
+        
+      </table>
+    </div>
+  </body>
+</html>

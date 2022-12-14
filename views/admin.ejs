@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books List</title>
+    <link rel="stylesheet" href="/css/nav-bar.css" />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <ul>
+      <li class="active" style="background-color: #f37373">
+        <a href="./">Home</a>
+      </li>
+      <li><a href="./books"> Book List</a></li>
+      <li><a href="./search_books">Search Book List</a></li>
+      <li><a href="./admin">Admin</a></li>
+      <li><a href="./insert">Add New Book</a></li>
+    </ul>
+    <style>
+      body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Statsbiblioteket_l%C3%A6sesalen-2.jpg/1280px-Statsbiblioteket_l%C3%A6sesalen-2.jpg');
+      }
+      </style> 
+    <div style="margin-left: 25%; padding: 1px 16px; height: 100%">
+      <h1 style="text-align: center"><b style="color:rgb(255, 251, 251);">Book List </b></h1>
+      <table class="table table-striped" style="width: 100%; border:1px solid;" >
+        
+          <tr>
+            <td width="211" valign="top"><p style="color:rgb(255, 251, 251);" align="left">id </p></td>
+            <td width="89" valign="top"><p style="color:rgb(255, 251, 251);" align="left">name </p></td>
+            <td width="94" valign="top"><p style="color:rgb(255, 251, 251);" align="left">author name </p></td>
+            <td width="59" valign="top"><p style="color:rgb(255, 251, 251);" align="left">Edit </p></td>
+            <td width="75" valign="top"><p style="color:rgb(255, 251, 251);" align="left">Delete </p></td>
+     
+      
+        <% characters.forEach(function(character) { %>
+          
+          <tr>
+            <td width="211" valign="top"><p style="color:rgb(255, 251, 251);"><%= character._id %> </p></td>
+            <td width="89" valign="top"><p style="color:rgb(255, 251, 251);" align="left"><%= character.name %></p></td>
+            <td width="94" valign="top"><p style="color:rgb(255, 251, 251);" align="left"><%= character.author_name %> </p></td>
+            <td width="59" valign="bottom"><p style="color:rgb(255, 251, 251);" align="right"><a  <a
+              href="./edit/?id=<%= character._id %>">edit</a></p></td>
+            <td width="75" valign="top"><p align="left"><a
+              href="./delete/?id=<%= character._id %>" onclick="return confirm('Are you sure??');">Delete</a> </p></td>
+          </tr>
+        <tr>
+          
+        <%  }); %>
+        
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <link rel="stylesheet" href="/css/nav-bar.css" />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <ul>
+      <li class="active" style="background-color: #f87b7b">
+        <a href="/">Home</a>
+      </li>
+      <li><a href="/books">Book List</a></li>
+      <li><a href="/search_books">Search Book List</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/insert">Add New Book</a></li>
+    </ul>
+    <style>
+      body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Statsbiblioteket_l%C3%A6sesalen-2.jpg/1280px-Statsbiblioteket_l%C3%A6sesalen-2.jpg');
+      }
+      </style> 
+    <!-- Card -->
+    <h1 style="text-align: center"><b style="color:rgb(255, 251, 251);">Book Details</b></h1>
+    <!-- Info of the book -->
+    <% characters.forEach(function(character) { %>
+          
+    <div class="card" style="width: 60%; margin-left: 25%">
+      <img
+        class="card-img-top"
+        src="../images/<%= character.image %>"
+        alt="Card image"
+        style="width: 50%; margin-left: 25%; margin-top: 10px"
+      />
+      <div class="card-body">
+        <h4 class="card-title" style="color:rgb(255, 251, 251);"><%= character.name %> </h4>
+        <p style="color:rgb(255, 251, 251);" class="card-text">
+          <%= character.author_name %><br/>
+          <%= character.description %>
+        </p>
+      </div>
+    </div>
+    <%  }); %>
+  </body>
+</html>
